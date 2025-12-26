@@ -11,7 +11,7 @@ st.markdown("This app calculates monthly payments and stores the schedule in an 
 # --- SIDEBAR INPUTS ---
 st.sidebar.header("Loan Parameters")
 principal = st.sidebar.number_input("Principal Amount ($)", min_value=1000, value=250000)
-interest_rate = st.sidebar.number_input("Annual Interest Rate (%)", min_value=0, value=6.5)# if you want as slider:  st.sidebar.slider("Annual Interest Rate (%)", 0.1, 15.0, 6.5)
+interest_rate = st.sidebar.number_input("Annual Interest Rate (%)", min_value=0.1, value=6.5)# if you want as slider:  st.sidebar.slider("Annual Interest Rate (%)", 0.1, 15.0, 6.5)
 years = st.sidebar.number_input("Loan Term (Years)", min_value=1, max_value=50, value=30)
 
 # --- ANNUITY MATH ---
@@ -77,5 +77,6 @@ if st.button("Generate Secure Mortgage Ledger"):
     st.subheader("Immutable Blockchain Ledger")
     st.dataframe(df, use_container_width=True)
     st.success("✅ Ledger generated and cryptographically secured.")
+
 
 
